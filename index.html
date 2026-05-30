@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shanmuga Mani M | AI/ML Engineer & Full Stack Developer</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Shanmuga Mani M | AI/ML Engineer & Full Stack Developer">
+  <meta name="description"
+    content="Portfolio of Shanmuga Mani M, specializing in AI/ML engineering, full-stack web development, 3D interactive web environments, and computer vision systems.">
+  <meta name="keywords"
+    content="Shanmuga Mani M, AI Engineer, ML Engineer, Full Stack Developer, Python, React, Three.js, Computer Vision, OpenCV, Portfolio">
+  <meta name="author" content="Shanmuga Mani M">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shanmugamani45.github.io/">
+  <meta property="og:title" content="Shanmuga Mani M | AI/ML Engineer & Full Stack Developer">
+  <meta property="og:description"
+    content="Portfolio of Shanmuga Mani M, specializing in AI/ML engineering, full-stack web development, 3D interactive web environments, and computer vision systems.">
+  <meta property="og:image" content="https://shanmugamani45.github.io/author_profile.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://shanmugamani45.github.io/">
+  <meta property="twitter:title" content="Shanmuga Mani M | AI/ML Engineer & Full Stack Developer">
+  <meta property="twitter:description"
+    content="Portfolio of Shanmuga Mani M, specializing in AI/ML engineering, full-stack web development, 3D interactive web environments, and computer vision systems.">
+  <meta property="twitter:image" content="https://shanmugamani45.github.io/author_profile.png">
+
+  <!-- Preload Critical Assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700;800;900&family=Syncopate:wght@400;700&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700;800;900&family=Syncopate:wght@400;700&display=swap">
+  </noscript>
+  <link rel="preload" href="public/videos/Image_To_Video_Generation.mp4" as="video" type="video/mp4">
+
+  <link rel="stylesheet" href="src/styles/style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shanmuga Mani M",
+    "jobTitle": "AI/ML Engineer & Full Stack Developer",
+    "url": "https://shanmugamani45.github.io/",
+    "image": "https://shanmugamani45.github.io/author_profile.png",
+    "sameAs": [
+      "https://github.com/shanmugamani45",
+      "https://www.linkedin.com/in/shanmuga-mani-m",
+      "https://www.hackerrank.com/profile/shanmugamani_al1"
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Full Stack Web Development",
+      "Computer Vision",
+      "Python",
+      "React",
+      "Three.js",
+      "OpenCV"
+    ]
+  }
+  </script>
+</head>
+
+
+<body>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Glowing Background Blobs (PeachWeb style) -->
+  <div class="glow-blob glow-blob-1"></div>
+  <div class="glow-blob glow-blob-2"></div>
+  <div class="glow-blob glow-blob-3"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-glow"></div>
+    <div class="preloader-text" id="preloader-text">000%</div>
+    <div class="preloader-label">Initializing</div>
+  </div>
+
+  <!-- Custom Cursor Elements -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── Certificate Modal ── -->
+  <div id="cert-modal-overlay" class="cert-modal-overlay">
+    <div class="cert-modal">
+      <div class="cert-modal-header">
+        <div id="cert-modal-title" class="cert-modal-title">Certificate Preview</div>
+        <button id="cert-modal-close" class="cert-modal-close" aria-label="Close Preview">✕</button>
+      </div>
+      <div id="cert-modal-body" class="cert-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ── Settings Modal ── -->
+  <div id="settings-modal-overlay" class="settings-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+    <div class="settings-modal" id="settings-modal">
+      <div class="settings-modal-header">
+        <div class="settings-modal-title" id="settings-modal-title">Settings</div>
+        <button id="settings-modal-close" class="settings-modal-close" aria-label="Close Settings">✕</button>
+      </div>
+      <div class="settings-modal-body">
+        
+        <div class="settings-section">
+          <div class="settings-section-title">General Preferences</div>
+          <div class="settings-row">
+            <div class="settings-row-info">
+              <span class="settings-item-label">Accessible Mode</span>
+              <span class="settings-item-desc">Enable standard browser cursor and reduce page animations.</span>
+            </div>
+            <label class="settings-switch" for="settings-accessibility-checkbox">
+              <input type="checkbox" id="settings-accessibility-checkbox">
+              <span class="settings-switch-slider"></span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="settings-section">
+          <div class="settings-section-title">Stack & Certifications (3D Sphere)</div>
+          
+          <!-- Sphere Speed Control -->
+          <div class="settings-row">
+            <div class="settings-row-info">
+              <span class="settings-item-label">Rotation Speed</span>
+              <span class="settings-item-desc">Adjust the auto-rotation speed of the 3D icon sphere.</span>
+            </div>
+            <div class="control-group">
+              <div class="range-wrapper">
+                <input type="range" id="sphere-speed" min="0" max="100" value="50" aria-label="Sphere Rotation Speed">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Sphere Direction Control -->
+          <div class="settings-row">
+            <div class="settings-row-info">
+              <span class="settings-item-label">Rotation Direction</span>
+              <span class="settings-item-desc">Change the rotation direction of the 3D icon sphere.</span>
+            </div>
+            <button id="sphere-direction-btn" class="control-btn" title="Toggle Sphere Direction" aria-label="Toggle Sphere Direction">
+              <span class="btn-icon">🔄</span> <span class="btn-label">Standard</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="settings-section">
+          <div class="settings-section-title">3D Journey Tunnel</div>
+          <div class="journey-dashboard" id="journey-controls">
+            <!-- Auto-Scroll Toggle -->
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <span class="settings-item-label">Auto-Scroll</span>
+                <span class="settings-item-desc">Enable automatic forward scrolling through the tunnel.</span>
+              </div>
+              <button id="journey-play-btn" class="control-btn active" title="Toggle Auto-Scroll" aria-label="Toggle Auto-Scroll">
+                <span class="btn-icon">⏸</span> <span class="btn-label">Auto-Scroll</span>
+              </button>
+            </div>
+            
+            <!-- Speed Control -->
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <span class="settings-item-label">Travel Speed</span>
+                <span class="settings-item-desc">Adjust the speed of auto-scrolling.</span>
+              </div>
+              <div class="control-group">
+                <div class="range-wrapper">
+                  <input type="range" id="journey-speed" min="0" max="100" value="30" aria-label="Scroll Speed">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Spacing Density -->
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <span class="settings-item-label">Tunnel Density</span>
+                <span class="settings-item-desc">Adjust the rendering density / distance between rings.</span>
+              </div>
+              <div class="control-group">
+                <div class="range-wrapper">
+                  <input type="range" id="journey-density" min="20" max="80" value="50" aria-label="Tunnel Spacing Density">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Theme Toggle -->
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <span class="settings-item-label">Visual Theme</span>
+                <span class="settings-item-desc">Switch between Cyber (Cyan/Purple) and Solar (Amber/Gold).</span>
+              </div>
+              <button id="journey-theme-btn" class="control-btn" title="Toggle Tunnel Theme" aria-label="Toggle Tunnel Theme">
+                <span class="btn-icon">🌓</span> <span class="btn-label">Neon Theme</span>
+              </button>
+            </div>
+            
+            <!-- Direction Toggle -->
+            <div class="settings-row">
+              <div class="settings-row-info">
+                <span class="settings-item-label">Travel Direction</span>
+                <span class="settings-item-desc">Reverse scroll travel direction (Forward/Backward).</span>
+              </div>
+              <button id="journey-direction-btn" class="control-btn" title="Toggle Direction" aria-label="Toggle Direction">
+                <span class="btn-icon">↕</span> <span class="btn-label">Direction</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <nav class="floating-nav" id="floating-nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Work</a>
+    <a href="#journey">Journey</a>
+    <a href="#certification">Stack</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div id="home" class="hero-container">
+    <div class="frame">
+      <video id="hero" preload="metadata" autoplay loop muted playsinline>
+        <source src="Image_To_Video_Generation.webm" type="video/webm">
+        <source src="public/videos/Image_To_Video_Generation.mp4" type="video/mp4">
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    </div>
+    <canvas id="hero-particles"></canvas>
+
+    <aside id="info" class="info" aria-hidden="true">
+      <h1><span class="h1-outline">SHANMUGA</span> <span class="h1-solid">MANI M</span></h1>
+      <div class="hero-sub">
+        <div class="hero-roles">
+          <span>AI/ML Engineer</span>
+          <span class="dot">•</span>
+          <span>Full Stack Developer</span>
+          <span class="dot">•</span>
+          <span>3D Web Explorer</span>
+        </div>
+        <div class="line"></div>
+        <p>Creating scalable applications, immersive interfaces, &amp; experimental digital systems with modern
+          technologies.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section id="about" class="page-section reveal-section">
+    <div class="content-wrapper"
+      style="max-width: 1100px; display: flex; flex-wrap: wrap; gap: 60px; align-items: center; justify-content: space-between; text-align: left;">
+      <div class="about-img-wrapper" id="about-img-wrapper"
+        style="flex: 1; min-width: 300px; max-width: 400px; position: relative; perspective: 1200px; z-index: 1;">
+        <div
+          style="position: absolute; inset: -20px; background: radial-gradient(circle, rgba(127,209,255,0.15) 0%, transparent 70%); border-radius: 50%; z-index: 0; transform: translateZ(-20px);">
+        </div>
+        <div class="about-img-inner" id="about-img-inner"
+          style="position: relative; width: 100%; height: 100%; border-radius: 24px; transform-style: preserve-3d; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); box-shadow: 0 30px 60px rgba(0,0,0,0.6); border: 1px solid rgba(127, 209, 255, 0.15); background: #07090f; z-index: 1;">
+          <picture style="width: 100%; display: block; transform: translateZ(30px); pointer-events: none; backface-visibility: hidden; -webkit-backface-visibility: hidden;">
+            <source srcset="public/images/author_profile.webp 1x, public/images/author_profile-2x.webp 2x" type="image/webp">
+            <img loading="lazy" decoding="async" src="public/images/author_profile-2x.webp" alt="Author Profile"
+              style="width: 100%; border-radius: 24px; aspect-ratio: 4/5; object-fit: cover; display: block; backface-visibility: hidden; -webkit-backface-visibility: hidden;">
+          </picture>
+          <div class="about-img-glare" id="about-img-glare"
+            style="position: absolute; inset: 0; border-radius: 24px; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2), transparent); opacity: 0; pointer-events: none; transition: opacity 0.4s; transform: translateZ(31px); mix-blend-mode: overlay; backface-visibility: hidden; -webkit-backface-visibility: hidden;">
+          </div>
+          <!-- Security Backside -->
+          <div class="about-img-backside"
+            style="position: absolute; inset: 0; border-radius: 24px; background: #07090f; border: 1px solid rgba(180, 20, 20, 0.5); display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotateY(180deg) translateZ(30px); backface-visibility: hidden; -webkit-backface-visibility: hidden; color: #ff4a4a; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1rem; text-align: center; padding: 24px; box-shadow: inset 0 0 30px rgba(180, 20, 20, 0.2); pointer-events: none;">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" style="margin-bottom: 16px;">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span style="color: #8da4c0; letter-spacing: 0.05em;">Screen Capture Protected</span>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1.2; min-width: 300px; z-index: 1;">
+        <h2 class="section-title"
+          style="margin-bottom: 15px; font-size: clamp(2.2rem, 4vw, 3.5rem); text-align: left; background: linear-gradient(135deg, #ffffff 20%, #7fd1ff 60%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          About <span class="serif-italic">Me</span></h2>
+        <div
+          style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(127, 209, 255, 0.7); margin-bottom: 30px;">
+          AI/ML ENGINEER & CREATIVE DEVELOPER</div>
+        <p class="content-text" style="text-align: justify; margin-bottom: 24px; font-size: 1.05rem; color: #a9b5c7;">
+          I specialize in building intelligent applications, immersive web experiences, and high-performance digital
+          systems. My work combines artificial intelligence, modern development frameworks, and cinematic interface
+          design to create products that are both technically strong and visually impactful.
+        </p>
+        <p class="content-text" style="text-align: justify; margin-bottom: 24px; font-size: 1.05rem; color: #a9b5c7;">
+          My focus spans AI/ML engineering, full-stack development, interactive 3D environments, and experimental user
+          experiences. I enjoy pushing beyond standard web design by blending advanced visuals, smooth interactions, and
+          scalable architecture into a single experience.
+        </p>
+        <p class="content-text" style="text-align: justify; font-size: 1.05rem; color: #a9b5c7;">
+          I work with technologies across machine learning, web engineering, databases, and real-time interactive
+          systems. From AI-powered applications to futuristic interface concepts, I aim to build projects that feel
+          modern, immersive, and engineered with purpose.
+        </p>
+        <div style="margin-top: 36px; display: flex; gap: 8px; flex-wrap: wrap;">
+          <a href="public/resume.pdf" target="_blank" class="resume-btn" download>
+            <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            <span>Resume</span>
+            <div class="resume-glow"></div>
+          </a>
+
+          <a href="https://github.com/shanmugamani45" target="_blank" class="resume-btn">
+            <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+              </path>
+            </svg>
+            <span>GitHub</span>
+            <div class="resume-glow"></div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/shanmuga-mani-m" target="_blank" class="resume-btn">
+            <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span>LinkedIn</span>
+            <div class="resume-glow"></div>
+          </a>
+
+          <a href="https://www.hackerrank.com/profile/shanmugamani_al1" target="_blank" class="resume-btn">
+            <svg class="resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            <span>HackerRank</span>
+            <div class="resume-glow"></div>
+          </a>
+        </div>
+        <!-- Tech Stack Marquee -->
+        <div class="tech-marquee-wrapper" style="margin-top: 40px;">
+          <div class="marquee-content">
+            <!-- First set -->
+            <div class="tech-pill">Python</div>
+            <div class="tech-pill">TensorFlow</div>
+            <div class="tech-pill">OpenCV</div>
+            <div class="tech-pill">React</div>
+            <div class="tech-pill">Next.js</div>
+            <div class="tech-pill">Node.js</div>
+            <div class="tech-pill">Flask</div>
+            <div class="tech-pill">Three.js</div>
+            <div class="tech-pill">PostgreSQL</div>
+            <div class="tech-pill">MongoDB</div>
+            <!-- Duplicate set for infinite scroll -->
+            <div class="tech-pill">Python</div>
+            <div class="tech-pill">TensorFlow</div>
+            <div class="tech-pill">OpenCV</div>
+            <div class="tech-pill">React</div>
+            <div class="tech-pill">Next.js</div>
+            <div class="tech-pill">Node.js</div>
+            <div class="tech-pill">Flask</div>
+            <div class="tech-pill">Three.js</div>
+            <div class="tech-pill">PostgreSQL</div>
+            <div class="tech-pill">MongoDB</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="all-work-section reveal-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Selected <span class="serif-italic">Works</span></h2>
+        <div class="section-header-line"></div>
+      </div>
+      <!-- Filter Bar -->
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="3d">3D / WebGL</button>
+        <button class="filter-btn" data-filter="shader">Shader Art</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+      </div>
+      <div class="portfolio-grid" id="portfolio-grid">
+
+        <div class="portfolio-item" data-project="0" data-filter="fullstack"
+          style="background:linear-gradient(135deg,#0a1628,#0d2d5c,#1a4fa0);">
+          <div class="item-bg" style="background-image: url('public/images/olp-1.webp');"></div>
+          <div class="item-content">
+            <div class="item-title">Online Learning Platform</div>
+            <div class="item-category">Full Stack / EdTech</div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-project="1" data-filter="3d"
+          style="background:linear-gradient(135deg,#050f1a,#0a2a2a,#0d4d4d);">
+          <div class="item-bg" style="background-image: url('public/images/siw-1.webp');"></div>
+          <div class="item-content">
+            <div class="item-title">Spatial Interaction Workspace</div>
+            <div class="item-category">3D / Gesture / WebGL</div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-project="2" data-filter="ai"
+          style="background:linear-gradient(135deg,#0f0a1e,#2a1040,#6b21a8);">
+          <div class="item-bg" style="background-image: url('public/images/gesture-detection.webp');"></div>
+          <div class="item-content">
+            <div class="item-title">Gesture Detection TTS</div>
+            <div class="item-category">AI / Computer Vision</div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-project="3" data-filter="ai fullstack"
+          style="background:linear-gradient(135deg,#0a1a0a,#14532d,#16a34a);">
+          <div class="item-bg" style="background-image: url('public/images/fitbot-1.webp');"></div>
+          <div class="item-content">
+            <div class="item-title">AI Fitness Chatbot</div>
+            <div class="item-category">Full Stack / AI / LLM</div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-project="4" data-filter="ai"
+          style="background:linear-gradient(135deg,#0f0a0a,#3b0a0a,#7f1d1d);">
+          <div class="item-bg" style="background-image: url('public/images/fdia-1.webp');"></div>
+          <div class="item-content">
+            <div class="item-title">FDIA Medical Security</div>
+            <div class="item-category">ML / Cybersecurity</div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-project="5" data-filter="ai fullstack"
+          style="background:linear-gradient(135deg,#0d1117,#161b22,#30363d);">
+          <div class="item-bg" style="background-image: url('public/images/vora-1.webp');"></div>
+          <div class="item-content">
+            <div class="item-title">VORA AI FITNESS APP</div>
+            <div class="item-category">AI / Full Stack / Fitness</div>
+          </div>
+        </div>
+
+        <div class="portfolio-item hidden-project" data-project="6" data-filter="ai fullstack"
+          style="background:linear-gradient(135deg,#0d1a2f,#1e3c72,#2a5298);">
+          <div class="item-bg" style="background-image: url('public/images/efpl_ide_screenshot.webp');"></div>
+          <div class="item-content">
+            <div class="item-title">EFPL Desktop IDE</div>
+            <div class="item-category">AI / Desktop IDE / Python</div>
+          </div>
+        </div>
+
+        <div class="portfolio-item hidden-project" data-project="7" data-filter="frontend"
+          style="background:linear-gradient(135deg,#1c0d2f,#3b1e72,#6b3fa0);">
+          <div class="item-content">
+            <div class="item-title">Web3 Wallet Interface</div>
+            <div class="item-category">Frontend / Blockchain</div>
+          </div>
+        </div>
+
+        <div class="portfolio-item hidden-project" data-project="8" data-filter="frontend"
+          style="background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);">
+          <div class="item-bg" style="background-image: url('public/images/powerbi-finance-1.webp');"></div>
+          <div class="item-content">
+            <div class="item-title">POWERBI-Finance-Dashboard</div>
+            <div class="item-category">Data Analytics / Dashboard</div>
+          </div>
+        </div>
+
+      </div>
+      <div style="display:flex; justify-content:flex-end; margin-top: 48px;">
+        <button id="all-works-btn" class="all-works-btn">All Works</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Project Modal ── -->
+  <div id="proj-modal-overlay" class="proj-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="proj-modal" id="proj-modal">
+      <div id="modal-spotlight" class="modal-spotlight"></div>
+      <div class="proj-modal-bar"></div>
+      <button class="proj-modal-close" id="proj-modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div class="proj-modal-body">
+
+        <div class="proj-modal-left">
+          <div class="proj-modal-header-row">
+            <div class="proj-modal-tag" id="modal-category">Category</div>
+            <span class="proj-modal-num" id="modal-num">01 / 06</span>
+          </div>
+          <h2 class="proj-modal-title" id="modal-title">Project Title</h2>
+          <div class="proj-modal-divider"></div>
+          <p class="proj-modal-desc" id="modal-desc">Description goes here.</p>
+          <div class="proj-tech-heading">Technologies Used</div>
+          <div class="proj-tech-pills" id="modal-tech"></div>
+          <div class="proj-links" id="modal-links"></div>
+        </div>
+
+        <div class="proj-modal-right">
+          <div id="modal-screenshot" class="proj-screenshot-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            <span>Screenshot Coming Soon</span>
+          </div>
+          <div class="proj-stats" id="modal-stats">
+            <div class="proj-stat">
+              <div class="proj-stat-val" id="stat-year">2024</div>
+              <div class="proj-stat-lbl">Year</div>
+            </div>
+            <div class="proj-stat">
+              <div class="proj-stat-val" id="stat-status">Live</div>
+              <div class="proj-stat-lbl">Status</div>
+            </div>
+            <div class="proj-stat">
+              <div class="proj-stat-val" id="stat-type">Web</div>
+              <div class="proj-stat-lbl">Type</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <section id="journey" class="reveal-section">
+    <div id="journey-canvas-container"></div>
+    
+    <div class="journey-header">
+      <h2 class="section-title">My <span class="serif-italic">Journey</span></h2>
+      <p class="journey-subtitle">Drag or scroll to travel infinitely through my timeline, project highlights, and milestones.</p>
+    </div>
+
+  </section>
+
+  <section id="certification" class="page-section reveal-section">
+    <div class="content-wrapper" style="max-width: 1200px; width: 100%;">
+      <h2 class="section-title">Stack &amp; <span class="serif-italic">Certifications</span></h2>
+      <p class="content-text" style="max-width: 700px; margin: 0 auto;">
+        Experienced with modern technologies across AI/ML, full-stack development, databases, and interactive web
+        systems. Skilled in building scalable applications, immersive interfaces, and real-world software solutions.
+      </p>
+      <div class="sphere-wrapper">
+        <button id="flip-btn" class="flip-btn" aria-label="Toggle Certifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 12V4M4 4H12M4 4L12 12" />
+            <path d="M20 12V20M20 20H12M20 20L12 12" />
+          </svg>
+        </button>
+
+        <div id="sphere-flip-container" class="sphere-flip-container">
+          <div class="sphere-front">
+            <div id="icon-sphere"></div>
+          </div>
+
+          <div class="sphere-back">
+            <div class="sphere-back-header">
+              <h3>SAM's Certificates</h3>
+              <span class="cert-total-badge">23 Total</span>
+            </div>
+            <div class="cert-filter-bar" id="cert-filter-bar">
+              <button class="cert-filter-btn active" data-filter="all">All</button>
+              <button class="cert-filter-btn" data-filter="data">Data Science</button>
+              <button class="cert-filter-btn" data-filter="cyber">Cyber Security</button>
+              <button class="cert-filter-btn" data-filter="nptel">NPTEL</button>
+              <button class="cert-filter-btn" data-filter="cloud">Cloud</button>
+              <button class="cert-filter-btn" data-filter="other">Others</button>
+            </div>
+            <div class="certs-grid">
+
+              <!-- Data Scientist Category -->
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">📊</span>
+                <div class="cert-title">Master in Data Scientist</div>
+                <div class="cert-org">IBM / Cognitive Class</div>
+                <a href="public/certificates/DATA SCIENTIST/MASTER IN DATA SCIENTIST.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">🐍</span>
+                <div class="cert-title">Python for Data Science</div>
+                <div class="cert-org">Cognitive Class</div>
+                <a href="public/certificates/DATA SCIENTIST/PYTHON FOR DATA SCIENCE-3.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">🤖</span>
+                <div class="cert-title">Machine Learning with Python</div>
+                <div class="cert-org">IBM</div>
+                <a href="public/certificates/DATA SCIENTIST/MACHINE LEARNING USING PYTHON-5.pdf" target="_blank"
+                  class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">🚀</span>
+                <div class="cert-title">Data Science Capstone</div>
+                <div class="cert-org">Professional Certification</div>
+                <a href="public/certificates/DATA SCIENTIST/CAPSTONE.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">📉</span>
+                <div class="cert-title">Data Science w/ Python 4</div>
+                <div class="cert-org">IBM Certification</div>
+                <a href="public/certificates/DATA SCIENTIST/DATA SCIENCE WITH PYTHON_4.pdf" target="_blank"
+                  class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">🧩</span>
+                <div class="cert-title">IBM PY0101EN Cert</div>
+                <div class="cert-org">IBM Python Specialization</div>
+                <a href="public/certificates/DATA SCIENTIST/IBM PY0101EN Certificate-3.pdf" target="_blank"
+                  class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">📋</span>
+                <div class="cert-title">Programming Essentials</div>
+                <div class="cert-org">Core Foundations</div>
+                <a href="public/certificates/DATA SCIENTIST/PROGRAMMING ESSENTIALS.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">🗃️</span>
+                <div class="cert-title">SQL Certification</div>
+                <div class="cert-org">Data Science Path</div>
+                <a href="public/certificates/DATA SCIENTIST/SQL CERTIFICATION .pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">📊</span>
+                <div class="cert-title">Tableau Specialist</div>
+                <div class="cert-org">Data Viz Mastery</div>
+                <a href="public/certificates/DATA SCIENTIST/TABLEAU-6.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="data">
+                <span class="cert-icon">🔬</span>
+                <div class="cert-title">Data Sciences with Python 4</div>
+                <div class="cert-org">Advanced Analytics</div>
+                <a href="public/certificates/DATA SCIENTIST/DATA SCIENCES WITH PYTHON-4.pdf" target="_blank"
+                  class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+
+
+              <!-- Cyber Security Category -->
+              <div class="cert-card" data-category="cyber">
+                <span class="cert-icon">🛡️</span>
+                <div class="cert-title">Cyber Security Expert</div>
+                <div class="cert-org">Security Specialist</div>
+                <a href="public/certificates/CYBER SECURITY/CYBER SECURITY EXPERT.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="cyber">
+                <span class="cert-icon">🕵️</span>
+                <div class="cert-title">Ethical Hacker</div>
+                <div class="cert-org">Cyber Security Path</div>
+                <a href="public/certificates/CYBER SECURITY/Ethical Hacker .pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="cyber">
+                <span class="cert-icon">🔒</span>
+                <div class="cert-title">CompTIA Security+</div>
+                <div class="cert-org">Global Standard</div>
+                <a href="public/certificates/CYBER SECURITY/CompTIA Security.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="cyber">
+                <span class="cert-icon">📛</span>
+                <div class="cert-title">CISSP Professional</div>
+                <div class="cert-org">Security Management</div>
+                <a href="public/certificates/CYBER SECURITY/CISSP.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="cyber">
+                <span class="cert-icon">📑</span>
+                <div class="cert-title">Cyber Security CS-E-1</div>
+                <div class="cert-org">Technical Certification</div>
+                <a href="public/certificates/CYBER SECURITY/CS-E-1.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="cyber">
+                <span class="cert-icon">🖥️</span>
+                <div class="cert-title">Intro to Cybersecurity</div>
+                <div class="cert-org">Foundational Course</div>
+                <a href="public/certificates/CYBER SECURITY/Introduction to cybersecurity.pdf" target="_blank"
+                  class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+
+              <!-- NPTEL Category -->
+              <div class="cert-card" data-category="nptel">
+                <span class="cert-icon">🧠</span>
+                <div class="cert-title">ML and Deep Learning</div>
+                <div class="cert-org">NPTEL</div>
+                <a href="public/certificates/NPTEL/ML AND DL.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="nptel">
+                <span class="cert-icon">🗣️</span>
+                <div class="cert-title">Natural Language Processing</div>
+                <div class="cert-org">NPTEL</div>
+                <a href="public/certificates/NPTEL/Natural Language Processing.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="nptel">
+                <span class="cert-icon">🎨</span>
+                <div class="cert-title">Innovation by Design</div>
+                <div class="cert-org">NPTEL</div>
+                <a href="public/certificates/NPTEL/Innovation by Design.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="nptel">
+                <span class="cert-icon">💾</span>
+                <div class="cert-title">IBM ML0101EN Cert</div>
+                <div class="cert-org">Python / Cognitive Class</div>
+                <a href="public/certificates/PYTHON/IBM ML0101EN Certificate _ Cognitive Class.pdf" target="_blank"
+                  class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+
+              <!-- Cloud -->
+              <div class="cert-card" data-category="cloud">
+                <span class="cert-icon">☁️</span>
+                <div class="cert-title">Azure Fundamentals</div>
+                <div class="cert-org">Microsoft</div>
+                <a href="public/certificates/CLOUD/AZURE.pdf" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+
+              <!-- Others -->
+              <div class="cert-card" data-category="other">
+                <span class="cert-icon">🇪🇸</span>
+                <div class="cert-title">Spanish Language A1.1</div>
+                <div class="cert-org">Language Proficiency</div>
+                <a href="public/certificates/LANGUAGE/Spanish Final A1.1 Certificates - SHANMUGA MANI M.pdf" target="_blank"
+                  class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+              <div class="cert-card" data-category="other">
+                <span class="cert-icon">🏆</span>
+                <div class="cert-title">CIT Workshop</div>
+                <div class="cert-org">Hackathon</div>
+                <a href="public/certificates/HACKTHON/CIT-WORKSHOP.webp" target="_blank" class="cert-link"
+                  style="color: #7fd1ff; font-size: 0.8rem; text-decoration: none; margin-top: 10px; display: block;">View
+                  →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="faq" class="page-section reveal-section">
+    <div class="content-wrapper" style="max-width: 1200px; width: 100%;">
+      <h2 class="section-title">Frequently Asked <span class="serif-italic">Questions</span></h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>
+            <h3>Do you take freelance projects?</h3>
+            <span class="faq-icon">+</span>
+          </summary>
+          <p>Yes, depending on my current capacity. Please reach out via the contact section so we can discuss the scope
+            and timeline.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h3>What technologies do you specialize in?</h3>
+            <span class="faq-icon">+</span>
+          </summary>
+          <p>I primarily build highly interactive user interfaces using React, Next.js, and Three.js (WebGL). I also use
+            Framer Motion and GSAP for micro-interactions.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h3>What is your approach to AI integration?</h3>
+            <span class="faq-icon">+</span>
+          </summary>
+          <p>I believe AI should enhance user experience, not complicate it. I focus on integrating machine learning
+            models seamlessly into the backend while exposing them through clean, intuitive frontend interfaces.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h3>How long does a typical project take?</h3>
+            <span class="faq-icon">+</span>
+          </summary>
+          <p>Project timelines vary based on complexity. A standard interactive web application might take 4-6 weeks,
+            while complex AI-integrated platforms can take several months. We establish clear milestones before
+            starting.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h3>Do you work with existing design systems?</h3>
+            <span class="faq-icon">+</span>
+          </summary>
+          <p>Yes, I am comfortable adapting to established brand guidelines, but I also specialize in building custom,
+            highly cinematic design systems from the ground up tailored to specific project needs.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <h3>What do you need from me to start a project?</h3>
+            <span class="faq-icon">+</span>
+          </summary>
+          <p>Typically, a clear project brief, timeline expectations, and any existing brand assets or data
+            requirements. We kick off every project with a detailed discovery phase to align on goals and deliverables.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <iframe src="edc/3dcom1/dist/index.html?v=1" title="Contact Tab" loading="eager"></iframe>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-flip-scene">
+        <div id="footer-flip-card" class="footer-flip-card">
+          <div class="footer-flip-face footer-flip-front">
+            <button id="footer-flip-trigger" class="footer-flip-trigger" aria-label="Open to Collaborations details">
+              <span class="footer-flip-eyebrow">Collaboration</span>
+              <span class="footer-flip-title">Open to Collaborations</span>
+              <span class="footer-flip-subtitle">Tap to reveal availability, links, and focus areas</span>
+            </button>
+          </div>
+
+          <div class="footer-flip-face footer-flip-back">
+            <div class="footer-top">
+              <div class="footer-brand">
+                <div class="footer-kicker">Open to Collaborations</div>
+                <h3>Let&apos;s build something that feels future-ready.</h3>
+                <p>Shanmuga Mani M is an AI/ML engineer and full-stack developer focused on intelligent applications, immersive interfaces, and modern digital systems that blend engineering with design.</p>
+
+                <div class="footer-socials">
+                  <a href="mailto:shanmugamani.al23@krct.ac.in" class="footer-social-link">Email</a>
+                  <a href="https://www.linkedin.com/in/shanmuga-mani-m" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a>
+                  <a href="https://github.com/shanmugamani45" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a>
+                </div>
+              </div>
+
+              <div class="footer-links-panel">
+                <button id="footer-flip-close" class="footer-flip-close" aria-label="Close collaboration details">Close</button>
+                <div class="footer-links-col">
+                  <span class="footer-column-title">Navigate</span>
+                  <a href="#home" class="footer-mini-link">Home</a>
+                  <a href="#about" class="footer-mini-link">About</a>
+                  <a href="#projects" class="footer-mini-link">Work</a>
+                  <a href="#journey" class="footer-mini-link">Journey</a>
+                  <a href="#certification" class="footer-mini-link">Stack</a>
+                  <a href="#contact" class="footer-mini-link">Contact</a>
+                </div>
+
+                <div class="footer-links-col">
+                  <span class="footer-column-title">Focus</span>
+                  <span class="footer-mini-text">AI / ML Systems</span>
+                  <span class="footer-mini-text">Full Stack Products</span>
+                  <span class="footer-mini-text">Computer Vision</span>
+                  <span class="footer-mini-text">Interactive Web</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Built with AI, full-stack engineering, and cinematic web interactions.</span>
+        <span>&copy; 2026 Shanmuga Mani M</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Settings Button -->
+  <button id="settings-toggle" class="accessibility-toggle"
+    aria-label="Open Settings"
+    title="Open Settings">
+    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </svg>
+    <span>Settings</span>
+  </button>
+
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-root",
+  "version": "1.0.0",
+  "description": "Professional developer portfolio with interactive vanilla frontend and React/Spline 3D simulation subproject",
+  "private": true,
+  "scripts": {
+    "dev": "serve -l 3005 .",
+    "build": "npm run build --prefix edc/3dcom1",
+    "postinstall": "npm install --prefix edc/3dcom1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
