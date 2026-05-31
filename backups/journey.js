@@ -1,39 +1,10 @@
 // ── Infinite 3D Tunnel Grid ("Journey") ──────────────────────────────────────────
 
 import { PROJECTS, openModal } from './modal.js';
-import { loadScript } from '../utils/loader.js';
 
 export function init3DJourney() {
-  const journeySection = document.getElementById('journey');
-  if (!journeySection) return;
-
-  if (typeof IntersectionObserver !== 'undefined') {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          bootstrap3DJourney();
-          observer.unobserve(journeySection);
-        }
-      });
-    }, { rootMargin: '200px' });
-    observer.observe(journeySection);
-  } else {
-    bootstrap3DJourney();
-  }
-}
-
-async function bootstrap3DJourney() {
   const container = document.getElementById('journey-canvas-container');
-  if (!container) return;
-
-  try {
-    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
-  } catch (err) {
-    console.error('Failed to load Three.js for 3D Journey:', err);
-    return;
-  }
-
-  if (typeof THREE === 'undefined') return;
+  if (!container || typeof THREE === 'undefined') return;
 
   // Scene setup
   const scene = new THREE.Scene();

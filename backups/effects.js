@@ -1,7 +1,5 @@
 // ── Immersive UX Animations, Scrolled Reveals, and Parallax Effects ─────────────────────────────
 
-import { loadScript } from './loader.js';
-
 export function initUIEffects() {
   // Hero Video Control
   const v = document.getElementById('hero');
@@ -59,22 +57,18 @@ export function initUIEffects() {
   }
 
   // Initialize Lenis (Smooth Scrolling)
-  loadScript('https://unpkg.com/lenis@1.1.20/dist/lenis.min.js')
-    .then(() => {
-      if (typeof Lenis !== 'undefined') {
-        const lenis = new Lenis({
-          duration: 1.2,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-        });
-        function raf(time) {
-          lenis.load = true; // dummy
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-      }
-    })
-    .catch(err => console.error('Failed to load Lenis:', err));
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
+    function raf(time) {
+      lenis.load = true; // dummy
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
 
   // Intersection Observer for Scroll Reveals
   const revealObserverOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
@@ -372,47 +366,11 @@ export function initUIEffects() {
       });
     }
   }
-
-  // Lazy load Contact Iframe
-  const contactSection = document.getElementById('contact');
-  if (contactSection && typeof IntersectionObserver !== 'undefined') {
-    const contactObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const iframe = contactSection.querySelector('iframe');
-          if (iframe && iframe.getAttribute('src') === 'about:blank') {
-            const realSrc = iframe.getAttribute('data-src');
-            if (realSrc) {
-              iframe.setAttribute('src', realSrc);
-            }
-          }
-          observer.unobserve(contactSection);
-        }
-      });
-    }, { rootMargin: '600px' });
-    contactObserver.observe(contactSection);
-  } else if (contactSection) {
-    // Fallback if IntersectionObserver is not supported
-    const iframe = contactSection.querySelector('iframe');
-    if (iframe && iframe.getAttribute('src') === 'about:blank') {
-      const realSrc = iframe.getAttribute('data-src');
-      if (realSrc) iframe.setAttribute('src', realSrc);
-    }
-  }
 }
 
-async function initHeroParticles() {
+function initHeroParticles() {
   const canvas = document.getElementById('hero-particles');
-  if (!canvas) return;
-
-  try {
-    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
-  } catch (err) {
-    console.error('Failed to load Three.js for Hero Particles:', err);
-    return;
-  }
-
-  if (typeof THREE === 'undefined') return;
+  if (!canvas || typeof THREE === 'undefined') return;
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
